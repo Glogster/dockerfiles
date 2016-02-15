@@ -10,8 +10,8 @@ else SEEDS="$IP"; fi
 # but you must set the broadcast_rpc_address to a value other than 0.0.0.0
 sed -i -e "s/^rpc_address.*/rpc_address: 0.0.0.0/" $CASSANDRA_CONFIG/cassandra.yaml
 
-# Set broadcast address to container's IP
-sed -i -e "s/^broadcast_address.*/broadcast_address: $IP/" $CASSANDRA_CONFIG/cassandra.yaml
+# Set broadcast_rpc_address to container's IP
+sed -i -e "s/^broadcast_rpc_address.*/broadcast_rpc_address: $IP/" $CASSANDRA_CONFIG/cassandra.yaml
 
 # Change the partitioner to very old one, since we are very dependant on it
 sed -i -e "s/^partitioner.*/partitioner: org.apache.cassandra.dht.OrderPreservingPartitioner/" $CASSANDRA_CONFIG/cassandra.yaml

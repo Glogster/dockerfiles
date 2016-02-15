@@ -18,6 +18,9 @@ sed -i -e "s/^partitioner.*/partitioner: org.apache.cassandra.dht.OrderPreservin
 # Dunno why zeroes here
 sed -i -e "s/^rpc_address.*/rpc_address: $IP/" $CASSANDRA_CONFIG/cassandra.yaml
 
+# Set broadcast_rpc_address to container's IP
+sed -i -e "s/^broadcast_rpc_address.*/broadcast_rpc_address: $IP/" $CASSANDRA_CONFIG/cassandra.yaml
+
 # Listen on IP:port of the container
 sed -i -e "s/^listen_address.*/listen_address: $IP/" $CASSANDRA_CONFIG/cassandra.yaml
 
