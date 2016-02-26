@@ -1,4 +1,4 @@
-FROM docker.glogstergroup.com/cassandra:base
+FROM docker.glogstergroup.com/system/cassandra:base
 
 USER root
 

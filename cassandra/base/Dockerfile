@@ -1,4 +1,4 @@
-FROM docker.glogstergroup.com/java:oracle-java8-jdk
+FROM docker.glogstergroup.com/system/java:oracle-java8-jdk
 
 ADD datastax.repo /etc/yum.repos.d/datastax.repo
 
