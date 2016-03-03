@@ -12,6 +12,9 @@ RUN tar -xzf red5-server-${RED5_RELEASE}-RELEASE-server.tar.gz && \
     mv red5-server-${RED5_RELEASE}-RELEASE /opt/red5 && \
     rm -f red5-server-${RED5_RELEASE}-RELEASE-server.tar.gz
 
+ADD scripts/config-red5.sh /usr/local/bin/config-red5
+RUN /usr/local/bin/config-red5
+
 EXPOSE 843 1935 5080 5443 8088 8443 9999
 
 WORKDIR /opt/red5
